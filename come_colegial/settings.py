@@ -75,9 +75,16 @@ WSGI_APPLICATION = 'come_colegial.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'come_colegial',
+        'USER': 'user', # cambiar al usuario que creen para la app
+        'PASSWORD': 'password', #cambiar al password que creen para la app
+        'HOST': '', # El hostname varia por PC
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'SQL Server Native Client 11.0',
+        },
+    },
 }
 
 
